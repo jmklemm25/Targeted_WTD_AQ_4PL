@@ -4,7 +4,7 @@
 ## 16 Sep 2025
 ##################
 
-############################ Percent inhibition function
+############################ percent inhibition function
 
 percent_inhibition_function<- function(neg_control_avg_abs, sample_avg_abs){
 
@@ -23,4 +23,4 @@ loq_function <- function(upper, lower, k=4.6805){
 
   return(c(upper_bound=upper_bound, lower_bound=lower_bound))
 
-}
+} ## end function
