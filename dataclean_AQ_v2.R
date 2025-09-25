@@ -65,16 +65,6 @@ newdata_unknowns <- aggregate(Abs ~ Sample, data = newdata_unknowns, FUN = mean)
 
 colnames(newdata_unknowns)[2] <- "abs_unknown_means"
 
-############################ Percent inhibition function
-
-percent_inhibition_function<- function(neg_control_avg_abs, sample_avg_abs){
-  
-  percent_inhibition <- ((1 - (sample_avg_abs/neg_control_avg_abs))*100)
-  
-  return(percent_inhibition)
-  
-} ## end function
-
 ############################ Percent inhibition standards
 
 ## calculate percent inhibition for standards
