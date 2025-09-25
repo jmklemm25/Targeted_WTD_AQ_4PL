@@ -22,16 +22,6 @@ load("/Users/jasonklemm/Desktop/targeted_aq_r/Data/cleaned_data_unknowns.RDS")
 ## create log logistic 4PL model for standard curve generation
 dose_response <- drc::drm(percent_inhibition~log_conc, data = newdata_standards, fct = LL.4(names = c("Slope", "Lower Limit", "Upper Limit", "ED50")), logDose = 10, type = "continuous")
 
-## calculate the limits of quantitation (LOQ)
-loq_function <- function(upper, lower, k=4.6805){
-  
-  upper_bound <- ((lower-upper)/(1+k))+upper
-  lower_bound <- ((lower-upper)/(1+(1/k)))+upper
-  
-  return(c(upper_bound=upper_bound, lower_bound=lower_bound))
-  
-} 
-
 ## assign values of loq to a vector
 loq_bounds <- loq_function(dose_response$coefficients[3], dose_response$coefficients[2])
 
