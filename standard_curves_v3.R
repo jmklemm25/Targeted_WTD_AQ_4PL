@@ -48,16 +48,6 @@ ribbon_df <- data.frame(
   ymax = ymax
 )
 
-## calculate the limits of quantitation (LOQ)
-loq_function <- function(upper, lower, k=4.6805){
-  
-  upper_bound <- ((lower-upper)/(1+k))+upper
-  lower_bound <- ((lower-upper)/(1+(1/k)))+upper
-  
-  return(c(upper_bound=upper_bound, lower_bound=lower_bound))
-  
-}
-
 ## assign values of loq to a vector
 loq_bounds <- loq_function(dose_response$coefficients[3], dose_response$coefficients[2])
 
