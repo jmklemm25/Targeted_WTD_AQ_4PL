@@ -6,13 +6,13 @@
 
 ## The purpose of this script is to clean the raw data coming off the plate reader for antibody quantitation
 
+## cleans out global env
+rm(list=ls()) 
+
 ##############################
 ## Libraries and functions
 source("/Users/jasonklemm/Desktop/targeted_aq_r/aq_functions.R")
 ##############################
-
-## cleans out global env
-rm(list=ls()) 
 
 ## load in your text file -- use unique directory for where you have yours saved
 data <- read.delim("/Users/jasonklemm/Downloads/JMK/ReturnoftheTiter/WT/Targeted_AQ_2025_DF40_Plate1.txt")
