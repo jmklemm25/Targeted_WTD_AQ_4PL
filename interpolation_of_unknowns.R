@@ -6,14 +6,14 @@
 
 ## The purpose of this script is to generate standard curves from the cleaned data
 
+## cleans out global env
+rm(list=ls()) 
+
 ##############################
 ## Libraries and functions
 library(drc)
 source("/Users/jasonklemm/Desktop/targeted_aq_r/aq_functions.R")
 ##############################
-
-## cleans out global env
-rm(list=ls()) 
 
 ## load in cleaned standards and unknowns data
 load("/Users/jasonklemm/Desktop/targeted_aq_r/Data/cleaned_data_standards.RDS")
